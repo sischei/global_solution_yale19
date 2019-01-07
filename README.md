@@ -38,7 +38,7 @@ with substantial heterogeneity can be solved numerically either by dynamic progr
 01.18.2018 | 09:00 - 10:20 am | Dynamic Programming and Time Iteration on Sparse Grids
 01.23.2018 | 09:00 - 10:20 am | Introduction Machine Learning (supervised and unsupervised machine learning, and basics on Gaussian Process Regression
 01.28.2018 | 09:00 - 10:20 am | Gaussian Process Regression (part II), Bayesian Mixture Models.
-01.30.2018 | 09:00 - 10:20 am | Dynamic Programming and time iteration on high-dimensional, irregularly-shaped state spaces.
+01.30.2018 | 09:00 - 10:20 am | Dynamic Programming and Time Iteration on high-dimensional, irregularly-shaped state spaces.
 
 
 
