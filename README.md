@@ -33,12 +33,12 @@ with substantial heterogeneity can be solved numerically either by dynamic progr
 
 **Date** | **Time** | **Main Topics** 
 -----|------|------
-08.30.2018 | 1:30 - 3:00 pm | Introduction to Global solution methods and a crash course to Python
-09.06.2018 | 1:30 - 3:00 pm | Introduction to Sparse Grids and Adaptive Sparse Grids
-09.20.2018 | 1:30 - 3:00 pm | Dynamic Programming and Time Iteration on Sparse Grids
-09.27.2018 | 1:30 - 3:00 pm | Introduction Machine Learning (supervised and unsupervised machine learning, and basics on Gaussian Process Regression
-09.20.2018 | 1:30 - 3:00 pm | Gaussian Process Regression (part II), Bayesian Mixture Models.
-09.27.2018 | 1:30 - 3:00 pm | Dynamic Programming and time iteration on high-dimensional, irregularly-shaped state spaces.
+01.14.2018 | 09:00 - 10:20 am | Introduction to Global solution methods and a crash course to Python
+01.16.2018 | 09:00 - 10:20 am | Introduction to Sparse Grids and Adaptive Sparse Grids
+01.18.2018 | 09:00 - 10:20 am | Dynamic Programming and Time Iteration on Sparse Grids
+01.23.2018 | 09:00 - 10:20 am | Introduction Machine Learning (supervised and unsupervised machine learning, and basics on Gaussian Process Regression
+01.28.2018 | 09:00 - 10:20 am | Gaussian Process Regression (part II), Bayesian Mixture Models.
+01.30.2018 | 09:00 - 10:20 am | Dynamic Programming and time iteration on high-dimensional, irregularly-shaped state spaces.
 
 
 
