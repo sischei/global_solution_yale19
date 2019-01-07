@@ -1,0 +1,47 @@
+### Global solution methods
+
+This is a introductory course on "Global solution methods" to solve dynamic economic models, held at the 
+Cowles Foundation, Department of Economics at Yale University in January/February 2019.
+
+
+**Prerequisites:** Undergraduate calculus and statistics. 
+Experience in any programming language such as Python is a plus. 
+Participants are encouraged to bring their research projects to be discussed.
+
+### Purpose of the lecture
+
+Modern dynamic economic models such as DSGE models are extremely rich to capture all the effects of interest: 
+large stochastic shocks that lead to highly non-linear policies, 
+or many agents that lead to a high-dimensional state space to name a few. 
+To this end, standard solution techniques such as log-linearization often fail to deliver reliable results across the domain of interest.
+The latter method may be useful to describe an economy that operates in normal times,
+but fails in the presence of nonlinearities, occasionally binding constraints, nonconvexities, 
+among other types of salient features of the economic reality, that the policy maker considers 
+relevant for taking policy actions and therefore the modelers would like to capture appropriately in their models.
+
+This course is intended to provide students in economics with a self-contained 
+introduction to the extensive and broad topic of "global solution methods".
+
+In particular, we will consider how dynamic (stochastic) economic models 
+with substantial heterogeneity can be solved numerically either by dynamic programming-that is, value function iteration, or by iterating on the first order conditions-that is, time iteration.
+
+
+
+### Lecturer
+* [Simon Scheidegger](https://sites.google.com/site/simonscheidegger/) (HEC, University of Lausanne)
+
+
+**Date** | **Time** | **Main Topics** 
+-----|------|------
+08.30.2018 | 1:30 - 3:00 pm | Introduction to Global solution methods and a crash course to Python
+09.06.2018 | 1:30 - 3:00 pm | Introduction to Sparse Grids and Adaptive Sparse Grids
+09.20.2018 | 1:30 - 3:00 pm | Dynamic Programming and Time Iteration on Sparse Grids
+09.27.2018 | 1:30 - 3:00 pm | Introduction Machine Learning (supervised and unsupervised machine learning, and basics on Gaussian Process Regression
+09.20.2018 | 1:30 - 3:00 pm | Gaussian Process Regression (part II), Bayesian Mixture Models.
+09.27.2018 | 1:30 - 3:00 pm | Dynamic Programming and time iteration on high-dimensional, irregularly-shaped state spaces.
+
+
+
+
+
+
