@@ -13,9 +13,6 @@
 #
 #     Simon Scheidegger; 07/17
 #======================================================================
-
-
-
 import nonlinear_solver_initial as solver     #solves opt. problems for terminal VF
 import nonlinear_solver_iterate as solviter   #solves opt. problems during VFI
 from parameters import *                      #parameters of model
@@ -25,80 +22,67 @@ import postprocessing as post                 #computes the L2 and Linfinity err
 
 import TasmanianSG                            #sparse grid library
 import numpy as np
-from mpi4py import MPI
 
+from mpi4py import MPI
 #======================================================================
 
 comm=MPI.COMM_WORLD
 rank=comm.Get_rank()
 
+# Start with Value Function Iteration
+
+valold=TasmanianSG.TasmanianSparseGrid()
+valnew=TasmanianSG.TasmanianSparseGrid()
 
 t1=MPI.Wtime()
-# Start with Value Function Iteration
-valnew=[]
-if (numstart==0):
+if numstart==0:
     valnew=interpol.sparse_grid(n_agents)
-     
     if rank==0:
-        for itheta in range(ntheta):
-            valnew[itheta].write("valnew_" + str(numstart) + "." + str(itheta) + ".txt") #write file to disk for restart
-
+        valnew.write("valnew_1."+str(numstart)+".txt") #write file to disk for restart
+    
     comm.Barrier()
     
     if rank!=0:
-        for itheta in range(ntheta):
-            valnew.append(TasmanianSG.TasmanianSparseGrid())
-            valnew[itheta].read("valnew_" + str(numstart) + "." + str(itheta) + ".txt")
-# value function during iteration
+        valnew.read("valnew_1." + str(numstart) + ".txt")
 else:
-    for itheta in range(ntheta):
-        valnew.append(TasmanianSG.TasmanianSparseGrid())
-        valnew[itheta].read("valnew_" + str(numstart) + "." + str(itheta) + ".txt")
+    valnew.read("valnew_1." + str(numstart) + ".txt")
 
-  
-valold=[]
+# value function during iteration
 valold=valnew
-
+comm.Barrier()
 for i in range(numstart, numits):
-    valnew=[]
+    valnew=TasmanianSG.TasmanianSparseGrid()
     valnew=interpol_iter.sparse_grid_iter(n_agents, valold)
     
     if rank==0:
-        for itheta in range(ntheta):
-            valnew[itheta].write("valnew_" + str(i+1) + "." + str(itheta) + ".txt")
+        valnew.write("valnew_1." + str(i+1) + ".txt")
     
     comm.Barrier()
     
     if rank!=0:
-        
-        for itheta in range(ntheta):
-            valnew.append(TasmanianSG.TasmanianSparseGrid())
-            valnew[itheta].read("valnew_" + str(i+1) + "." + str(itheta) + ".txt")
+        valnew.read("valnew_1." + str(i+1) + ".txt")
     
-    valold=[]
+    valold=TasmanianSG.TasmanianSparseGrid()
     valold=valnew
-
 t2=MPI.Wtime()
 
-#======================================================================
 if rank==0:
-    print "time: ", t2-t1, "s"
+    print(t2-t1)
+    #======================================================================
     print "==============================================================="
     print " "
     print " Computation of a growth model of dimension ", n_agents ," finished after ", numits, " steps"
     print " "
     print "==============================================================="
-#======================================================================
+    #======================================================================
 
-# compute errors
-if rank==0:
+    # compute errors
     avg_err=post.ls_error(n_agents, numstart, numits, No_samples)
-#======================================================================
-if rank==0:
+
+    #======================================================================
     print "==============================================================="
     print " "
     print " Errors are computed -- see error.txt"
     print " "
     print "==============================================================="
-#======================================================================
-
+    #======================================================================

@@ -1,18 +1,18 @@
 #======================================================================
-#
-#     sets the economic functions for the "Stochastic Growth Model", i.e.,
+# 
+#     sets the economic functions for the "Growth Model", i.e., 
 #     the production function, the utility function
-#
+#     
 #
 #     Simon Scheidegger; 07/17
-#======================================================================
-
+#====================================================================== 
 
 from parameters import *
 import numpy as np
 
-#======================================================================
-#utility function u(c,l)
+
+#====================================================================== 
+#utility function u(c,l) 
 
 def utility(cons=[], lab=[]):
     sum_util=0.0
@@ -28,20 +28,13 @@ def utility(cons=[], lab=[]):
     
     util=sum_util
     
-    return util
-
-#======================================================================
-# output_f
+    return util 
 
 
-def output_f(kap, lab, theta):
-    fun_val = theta*big_A*(kap**psi)*(lab**(1.0 - psi))
+#====================================================================== 
+# output_f 
+
+def output_f(kap=[], lab=[]):
+    fun_val = big_A*(kap**psi)*(lab**(1.0 - psi))
     return fun_val
-
 #======================================================================
-# probability function
-
-
-def prob(theta1, theta2):
-    return 1.0/len(theta_range)
-    

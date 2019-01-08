@@ -4,7 +4,7 @@
 #     interpolation in the first iteration of the VFI
 #     solutions.
 #
-#     Simon Scheidegger, 11/16 ; 07/17
+#     Simon Scheidegger; 07/17
 #======================================================================
 
 import TasmanianSG
@@ -17,9 +17,7 @@ import nonlinear_solver_initial as solver
 #======================================================================
 
 def test_sg(n_agents, iDepth, num_points=[]):
-    #unif=np.random.rand(num_points, n_agents)
-    #k_sample=k_bar+(unif)*(k_up-k_bar)
-    
+  
     grid=interpol.sparse_grid(n_agents, iDepth)
     
     k_sample=grid.getPoints()
