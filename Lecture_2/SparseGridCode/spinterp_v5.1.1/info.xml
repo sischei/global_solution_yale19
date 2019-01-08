@@ -1,0 +1,42 @@
+<productinfo
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="">
+<?xml-stylesheet type="text/xsl" href=""?>
+<!--
+  Sparse Grid Interpolation Toolbox
+  Copyright (c) 2006 W. Andreas Klimke, Universitaet Stuttgart 
+  Copyright (c) 2007-2008 W. A. Klimke. All Rights Reserved.
+  See LICENSE.txt for license. 
+  email: klimkeas@ians.uni-stuttgart.de
+  web  : http://www.ians.uni-stuttgart.de/spinterp
+-->
+
+<matlabrelease>14</matlabrelease>
+<name>Sparse Grid Interpolation</name>
+<type>toolbox</type>
+<icon>$toolbox/matlab/icons/book_mat.gif</icon>
+<help_location>/help</help_location>
+
+<list>
+
+<listitem>
+<label>Help</label>
+<callback>doc spinterptool/</callback>
+<icon>$toolbox/matlab/icons/book_mat.gif</icon>
+</listitem>
+
+<listitem>
+<label>Demos</label>
+<callback>demo toolbox 'Sparse Grid Interpolation'</callback>
+<icon>$toolbox/matlab/icons/demoicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Product Page (Web)</label>
+<callback>web http://www.ians.uni-stuttgart.de/spinterp/ -browser;</callback>
+<icon>$toolbox/matlab/icons/webicon.gif</icon>
+</listitem>
+
+</list>
+
+</productinfo>

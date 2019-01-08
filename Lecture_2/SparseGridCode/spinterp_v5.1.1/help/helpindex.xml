@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!--
+  Sparse Grid Interpolation Toolbox
+  Copyright (c) 2006 W. Andreas Klimke, Universitaet Stuttgart 
+  Copyright (c) 2007-2008 W. A. Klimke. All Rights Reserved.
+  See LICENSE.txt for license. 
+  email: klimkeas@ians.uni-stuttgart.de
+  web  : http://www.ians.uni-stuttgart.de/spinterp
+-->
+
+<!-- Note: The helpindex file must be sorted alphabetically to work properly!!! -->
+
+<index version="1.0">
+<indexitem target="cmpgrids.html">cmpgrids</indexitem>
+<indexitem target="plotgrid.html">plotgrid</indexitem>
+<indexitem target="plotindices.html">plotindices</indexitem>
+<indexitem target="spinterptool.html">Sparse Grid Interpolation Toolbox</indexitem>
+<indexitem target="spcgsearch.html">spcgsearch</indexitem>
+<indexitem target="spcompsearch.html">spcompsearch</indexitem>
+<indexitem target="spdim.html">spdim</indexitem>
+<indexitem target="spfminsearch.html">spfminsearch</indexitem>
+<indexitem target="spget.html">spget</indexitem>
+<indexitem target="spinterp.html">spinterp</indexitem>
+<indexitem target="spmultistart.html">spmultistart</indexitem>
+<indexitem target="sppurge.html">sppurge</indexitem>
+<indexitem target="spquad.html">spquad</indexitem>
+<indexitem target="spset.html">spset</indexitem>
+<indexitem target="spsurfun.html">spsurfun</indexitem>
+<indexitem target="spvals.html">spvals</indexitem>
+</index>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparse Grid Interpolation Toolbox
+  Copyright (c) 2006 W. Andreas Klimke, Universitaet Stuttgart 
+  Copyright (c) 2007-2008 W. A. Klimke. All Rights Reserved.
+  See LICENSE.txt for license. 
+  email: klimkeas@ians.uni-stuttgart.de
+  web  : http://www.ians.uni-stuttgart.de/spinterp
+-->
+<demos>
+<name>Sparse Grid Interpolation</name>
+<type>toolbox</type>
+<icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+<description><![CDATA[The following demos illustrate the most important features of the Sparse Grid Interpolation Toolbox.
+<p>
+<b>IMPORTANT NOTE:</b> The toolbox <b>must be initialized</b> prior to executing these demos by using the command <code>spinit</code> from the Matlab command line, or by clicking <a href="matlab:spinit"><code>here</code></a>.]]>
+</description>
+<website><a href="http://www.ians.uni-stuttgart.de/spinterp">Sparse Grid Interpolation Toolbox Web site</a></website>
+<!-- website is an undocumented tag that is necessary to supress the link
+		 to the Mathworks Web site, see
+		 matlab/toolbox/matlab/demos/private/demos.xsl.  -->
+<demosection>
+   <label>Piecewise multilinear and polynomial sparse grids</label>
+   <demoitem>
+      <label>cmpgrids - Compare the avalailable sparse grid types</label>
+      <callback>cmpgrids</callback>
+   </demoitem>
+   <demoitem>
+      <label>spdemo - Interpolate a simple two-dimensional function</label>
+      <callback>spdemo</callback>
+   </demoitem>
+   <demoitem>
+      <label>spdemovarout - Interpolate a function with multiple output arguments</label>
+      <callback>spdemovarout</callback>
+   </demoitem>
+   <demoitem>
+      <label>spcompare - Compare error plots for the test functions of Gerz</label>
+      <callback>spcompare</callback>
+   </demoitem>
+   <demoitem>
+      <label>spcomparepoly - Error plots for multilinear vs. polynomial basis functions</label>
+      <callback>spcomparepoly</callback>
+   </demoitem>
+   <demoitem>
+      <label>spcomparederiv - Error plots for computing gradients of sparse grid interpolants</label>
+      <callback>spcomparederiv</callback>
+   </demoitem>
+</demosection>
+
+<demosection>
+   <label>Dimension-adaptive sparse grids</label>
+   <demoitem>
+      <label>spadaptdemo - Dimension-adaptive interpolation of a simple two-dimensional function</label>
+      <callback>spadaptdemo</callback>
+   </demoitem>
+   <demoitem>
+      <label>spadaptanim - Illustrates the dimension-adaptive construction</label>
+      <callback>spadaptanim</callback>
+   </demoitem>
+   <demoitem>
+      <label>spadapterror - Compares the error: adaptive vs. non-adaptive</label>
+      <callback>spadapterror</callback>
+   </demoitem>
+</demosection>
+
+<demosection>
+   <label>Performance testing</label>
+   <demoitem>
+      <label>timespvals - Measure the performance of the hierarchical construction of the interpolant</label>
+      <callback>timespvals</callback>
+   </demoitem>
+   <demoitem>
+      <label>timespvalsdct - Measure and compare the performance of the DCT-based spvals algorithm</label>
+      <callback>timespvalsdct</callback>
+   </demoitem>
+   <demoitem>
+      <label>timespinterp - Measure the performance of computing interpolated values</label>
+      <callback>timespinterp</callback>
+   </demoitem>
+   <demoitem>
+      <label>timespderiv - Measure the performance of computing derivatives</label>
+      <callback>timespderiv</callback>
+   </demoitem>
+</demosection>
+</demos>

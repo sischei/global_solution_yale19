@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!--
+  Sparse Grid Interpolation Toolbox
+  Copyright (c) 2006 W. Andreas Klimke, Universitaet Stuttgart 
+  Copyright (c) 2007-2008 W. A. Klimke. All Rights Reserved.
+  See LICENSE.txt for license. 
+  email: klimkeas@ians.uni-stuttgart.de
+  web  : http://www.ians.uni-stuttgart.de/spinterp
+-->
+
+<toc version="1.0">
+
+<tocitem target="spinterptool.html" image="$toolbox/matlab/icons/book_mat.gif">Sparse Grid Interpolation Toolbox
+	<tocitem target="getting_started.html" image="$toolbox/matlab/icons/greencircleicon.gif">Getting Started
+		<tocitem target="whatis.html">What is sparse grid interpolation?</tocitem>
+		<tocitem target="initialization.html">Initialization of the toolbox</tocitem>
+		<tocitem target="firstexample.html">A first example</tocitem>
+		<tocitem target="linear.html">Linear basis functions</tocitem>
+		<tocitem target="polynomial.html">Polynomial basis functions</tocitem>
+		<tocitem target="dimension-adaptive.html">Dimensional adaptivity</tocitem>
+		<tocitem target="bibliography.html">Bibliography</tocitem>
+	</tocitem>
+	<tocitem target="advanced_topics.html" image="$toolbox/matlab/icons/pagesicon.gif">Advanced topics
+		<tocitem target="dimadaptdegree.html">Degree of Dimensional Adaptivity</tocitem>		
+		<tocitem target="multiple_outputs.html">Multiple output variables</tocitem>		
+		<tocitem target="derivatives.html">Derivatives</tocitem>
+		<tocitem target="integration.html">Integration</tocitem>
+		<tocitem target="optimization.html">Optimization</tocitem>
+		<tocitem target="performance.html">Improving performance</tocitem>		
+		<tocitem target="interfacing.html">Interfacing concepts</tocitem>		
+		<tocitem target="ode.html">Approximating ODEs</tocitem>		
+		<tocitem target="external.html">External models</tocitem>		
+	</tocitem>
+	<tocitem target="examples.html" image="$toolbox/matlab/icons/demoicon.gif">Examples
+	</tocitem>
+	<tocitem target="functions_list.html" image="$toolbox/matlab/icons/reficon.gif">Functions -- Alphabetical List
+	</tocitem>
+	<tocitem target="release_notes.html" image="$toolbox/matlab/icons/notesicon.gif">Release Notes</tocitem>
+	<tocitem target="../LICENSE.txt" image="$toolbox/matlab/icons/notesicon.gif">License</tocitem>
+	<tocitem target="spinterptool.html#printable_pdf" image="$toolbox/matlab/icons/pdficon.gif">Printable Documentation (PDF)
+	</tocitem>
+</tocitem>
+</toc>

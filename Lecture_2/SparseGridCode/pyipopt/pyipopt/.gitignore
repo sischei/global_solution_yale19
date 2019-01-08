@@ -1,0 +1,7 @@
+.*
+*.html
+# EXCEPTIONS
+!README
+!.gitignore
+build
+pyipopt.so

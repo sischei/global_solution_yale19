@@ -1,0 +1,31 @@
+2012-12-21
+Update HSL_MA97 to most recent version, required for the newly submitted Ipopt
+interface.
+	* HSL_MA97 v2.1.0
+
+2012-02-14
+Update to add HSL_MA77 C interface, supporting update to Ipopt driver
+Also upgrade following solver versions:
+	* HSL_MA86 v1.3.0
+	* HSL_MA97 v1.2.0
+
+2011-12-20
+Update to include new solver
+	* HSL_MA97 v1.0.0
+
+2011-10-03
+First public release, package versions as 2011-09-11 release.
+Contains updated build system to match better what IPOPT expects.
+
+2011-09-11
+Testing pre-release. Contains following package versions:
+	* MC19 1989-03-09
+	* HSL_MC68 v3.2.0
+	* MA27 2003-03-19
+	* MA28 1993-06-21
+	* MA57 v3.7.0
+	* HSL_MA77 v5.7.0
+	* HSL_MA86 v1.2.0
+
+2011-03-15 Jonathan Hogg
+Create autotools project to make coinhsl easier to build
