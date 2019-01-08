@@ -1,4 +1,4 @@
-### Global solution methods
+## Global solution methods
 
 This is a introductory course on "Global solution methods" to solve dynamic economic models, held at the 
 Cowles Foundation, Department of Economics at Yale University in January/February 2019.
@@ -9,7 +9,7 @@ Cowles Foundation, Department of Economics at Yale University in January/Februar
 Undergraduate calculus and statistics. Experience 
 in any programming language such as Python is a plus. Participants are encouraged to bring their research projects to be discussed.
 
-## Purpose of the lecture
+### Purpose of the lecture
 
 Modern dynamic economic models such as DSGE models are extremely rich to capture all the effects of interest: they contain large stochastic shocks that lead to highly non-linear policies, or many agents that lead to a high-dimensional state space, to name a few. To this end, standard solution techniques such as log-linearization often fail to deliver reliable results across the domain of interest. The latter method may be useful to describe an economy that operates in normal times, but fails in the presence of strong nonlinearities such as occasionally binding constraints, among other types of salient features of the economic reality, that the policymaker considers relevant for taking policy actions and therefore the modelers would like to capture appropriately in their models.
 
@@ -20,7 +20,7 @@ but finite heterogeneity can be solved numerically either by dynamic programming
 value function iteration or by iterating on the first order conditions-that is, time iteration.
 
 
-## Lecturer
+### Lecturer
 * [Simon Scheidegger](https://sites.google.com/site/simonscheidegger/) (HEC, University of Lausanne)
 
 
