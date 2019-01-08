@@ -1,6 +1,6 @@
 ## Global solution methods
 
-This is a introductory course on "Global solution methods" to solve dynamic economic models, held at the 
+This is an introductory course on "Global solution methods" to solve dynamic economic models, held at the 
 Cowles Foundation, Department of Economics at Yale University in January/February 2019.
 
 
