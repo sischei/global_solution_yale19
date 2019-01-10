@@ -1,7 +1,8 @@
 # Install entire sparse grid libraries, IPOPT and PYIPOT at once
 
 # make matlab available 
-module load matlab
+module load Apps/Matlab
+module load Langs/Python/2.7.15-anaconda 
 
 # unpack Matlab sparse grid library
 unzip spinterp_v5.1.1.zip
