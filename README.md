@@ -33,6 +33,7 @@ value function iteration or by iterating on the first order conditions-that is, 
 01.28.2018 | 09:00 - 10:20 am | Gaussian Process Regression (part II), Bayesian Gaussian Mixture Models.
 01.30.2018 | 09:00 - 10:20 am | Dimension-reduction with the active subspace method. Solving dynamic models on high-dimensional, (irregularly-shaped) state spaces
 
+The lectures will take place at ROOM 106 at 28 Hillhouse
 
 ### Some Literature
 
