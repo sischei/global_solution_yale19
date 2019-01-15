@@ -102,7 +102,7 @@ f.close()
 #############################################################################
 
 ## EXAMPLE 2:
-## interpolate: f(x,y) = exp(-x) / (1 + 100 * exp(-10 * y))
+## interpolate: f(x,y) = cos(0.5 * pi * x) * cos(0.5 * pi * y)
 ## using refinement
 
 aTres = np.empty([1000,])
@@ -136,7 +136,7 @@ print(" refinement level         points     error   ")
 
 #refinement level
 for iK in range(refinement_level):
-    grid1.setSurplusRefinement(fTol, 1, "fds")   #also use fds, or other rules
+    grid1.setSurplusRefinement(fTol, -1, "classic")   #also use fds, or other rules
     aPoints = grid1.getNeededPoints()
     aVals = np.empty([aPoints.shape[0], 1])
     for iI in range(aPoints.shape[0]):
