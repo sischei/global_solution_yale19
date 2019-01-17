@@ -30,7 +30,7 @@ value function iteration or by iterating on the first order conditions-that is, 
 01.16.2018 | 09:00 - 10:20 am | Introduction to Sparse Grids and Adaptive Sparse Grids
 01.18.2018 | 09:00 - 10:20 am | Dynamic Programming and Time Iteration with Sparse Grids
 01.23.2018 | 09:00 - 10:20 am | Introduction to Machine Learning (supervised and unsupervised machine learning), and basics on Gaussian Process Regression
-01.28.2018 | 09:00 - 10:20 am | Gaussian Process Regression (part II), Bayesian Gaussian Mixture Models.
+01.28.2018 | 09:00 - 10:20 am | Gaussian Process Regression (part II), Gaussian Mixture Models.
 01.30.2018 | 09:00 - 10:20 am | Dimension-reduction with the active subspace method. Solving dynamic models on high-dimensional, (irregularly-shaped) state spaces
 
 The lectures will take place at ROOM 106 at 28 Hillhouse
