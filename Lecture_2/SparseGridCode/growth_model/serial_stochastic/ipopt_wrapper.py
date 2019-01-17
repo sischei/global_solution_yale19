@@ -29,10 +29,13 @@ def EV_F(X, k_init, theta_init, n_agents):
     
     knext= (1-delta)*k_init + inv
     
+    #transform to comp. domain of sparse grid
+    knext_cube = box_to_cube(knext)       
+    
     # Compute E[V(next, theta)]
     exp_v=0.0
     for theta_next in theta_range:
-        exp_v+=prob(theta_init, theta_next)*V_INFINITY(knext, theta_next)
+        exp_v+=prob(theta_init, theta_next)*V_INFINITY(knext_cube, theta_next)
            
     # Compute Value Function
     VT_sum=utility(cons, lab) + beta*exp_v

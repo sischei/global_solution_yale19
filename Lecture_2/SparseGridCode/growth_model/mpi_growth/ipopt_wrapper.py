@@ -51,7 +51,7 @@ def EV_F_ITER(X, k_init, n_agents, grid):
     
     # Compute Value Function
     
-    VT_sum=utility(cons, lab) + beta*grid.evaluate(knext)
+    VT_sum=utility(cons, lab) + beta*grid.evaluate(knext_cube)
        
     return VT_sum
     

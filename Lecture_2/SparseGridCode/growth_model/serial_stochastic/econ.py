@@ -42,7 +42,29 @@ def output_f(kap, lab, theta):
 def prob(theta1, theta2):
     return 0.2  # 1/#states for simplicity
   
-#====================================================================== 
+#======================================================================
+# transformation to sparse grid cube
 
+def box_to_cube(knext=[]):
+    n=len(knext)
+    knext_box = knext[0:n]
+    knext_dummy = knext[0:n]
+    
+    scaling_dept = (range_cube/(k_up  - k_bar))   #scaling for kap 
+ 
+    #transformation onto cube [0,1]^d      
+    for i in range(n):
+        #prevent values outside the box
+        if  knext[i] > k_up:
+            knext_dummy[i] = k_up
+        elif knext[i] < k_bar:
+           knext_dummy[i] = k_bar
+        else: 
+            knext_dummy[i] = knext[i]      
+        #transformation to sparse grid domain
+        knext_box[i] = (knext_dummy[i] - k_bar)*scaling_dept          
 
+    return knext_box
+
+#======================================================================   
     

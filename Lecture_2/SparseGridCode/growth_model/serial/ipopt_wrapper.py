@@ -46,10 +46,13 @@ def EV_F_ITER(X, k_init, n_agents, grid):
     
     knext= (1-delta)*k_init + inv
     
+        #transform to comp. domain of sparse grid
+    knext_cube = box_to_cube(knext)       
+    
     # Compute Value Function
     
-    VT_sum=utility(cons, lab) + beta*grid.evaluate(knext)
-       
+    VT_sum=utility(cons, lab) + beta*grid.evaluate(knext_cube)
+    
     return VT_sum
     
 #=======================================================================
