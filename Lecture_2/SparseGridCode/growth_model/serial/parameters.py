@@ -14,7 +14,7 @@ import numpy as np
 #====================================================================== 
 
 # Depth of "Classical" Sparse grid
-iDepth=1
+iDepth=2
 iOut=1         # how many outputs
 which_basis = 1 #linear basis function (2: quadratic local basis)
 
@@ -47,13 +47,13 @@ k_up=3.0
 
 # Ranges for Controls
 c_bar=1e-2
-c_up=10000.0
+c_up=1.0
 
 l_bar=1e-2
 l_up=1.0
 
 inv_bar=1e-2
-inv_up=10000.0
+inv_up=1.0
 
 #====================================================================== 
 
