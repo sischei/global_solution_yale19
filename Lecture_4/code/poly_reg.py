@@ -15,7 +15,7 @@ X = cars.iloc[:,[3]].values
 X = X.reshape(X.size, 1)
 
 # precompute polynomial features
-poly = preprocessing.PolynomialFeatures(2)
+poly = preprocessing.PolynomialFeatures(1)
 Xp = poly.fit_transform(X)
 
 # fit linear regression model

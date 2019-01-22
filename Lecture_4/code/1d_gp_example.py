@@ -19,6 +19,10 @@ def kernel_function(a, b):
     return np.exp(-.5 * (1/kernelParameter) * sqdist)
 
 
+#fix the seed
+np.random.seed(1)
+
+
 # Here we run the test
 N = 10         # number of training points.
 n = 50         # number of test points.
