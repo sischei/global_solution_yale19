@@ -35,8 +35,6 @@ value function iteration or by iterating on the first order conditions-that is, 
 
 The lectures will take place at ROOM 106 at 28 Hillhouse
 
-### Some Literature
-
 
 
 
