@@ -22,7 +22,9 @@ X = np.random.uniform(-1., 1., (n_sample, dim))
 y = np.sin(X[:, 0:1]) * np.cos(X[:, 1:2]) + np.random.randn(n_sample, 1) * 0.005
 
 # Instantiate a Gaussian Process model
-kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+kernel = RBF()
+#kernel =  C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+
 gp = GaussianProcessRegressor(kernel=kernel, n_restarts_optimizer=9)
 
 # Fit to data using Maximum Likelihood Estimation of the parameters

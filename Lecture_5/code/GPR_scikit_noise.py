@@ -17,7 +17,9 @@ def f(x):
 x = np.atleast_2d(np.linspace(0, 10, 1000)).T
 
 # Instantiate a Gaussian Process model
-kernel = C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+kernel = RBF()
+#kernel =  C(1.0, (1e-3, 1e3)) * RBF(10, (1e-2, 1e2))
+
 
 # now the noisy case
 X = np.linspace(0.1, 9.9, 20)
