@@ -75,13 +75,13 @@ def iterate(k_init, n_agents, grid):
     def eval_f(X):
         return EV_F_ITER(X, k_init, n_agents, grid)
         
-    def eval_grad_f(x):
+    def eval_grad_f(X):
         return EV_GRAD_F_ITER(X, k_init, n_agents, grid)
         
-    def eval_g(x):
+    def eval_g(X):
         return EV_G_ITER(X, k_init, n_agents)
         
-    def eval_jac_g(x, flag):
+    def eval_jac_g(X, flag):
         return EV_JAC_G_ITER(X, flag, k_init, n_agents)
         
     # First create a handle for the Ipopt problem 
