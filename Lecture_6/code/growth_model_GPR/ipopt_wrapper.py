@@ -47,7 +47,7 @@ def EV_F_ITER(X, k_init, n_agents, gp_old):
     knext= (1-delta)*k_init + inv
 
     #transform to comp. domain of the model
-    knext_cube = box_to_cube(knext) 
+    knext_cube = knext #box_to_cube(knext) 
     
     # initialize correct data format for training point
     s = (1,n_agents)
