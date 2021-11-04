@@ -43,7 +43,7 @@ class HS071():
         return EV_G_ITER(x, self.k_init, self.n_agents) 
 
     def eval_jac_g(self, x, flag): 
-        return EV_JAC_G(x, flag, self.k_init, self.n_agents) 
+        return EV_JAC_G_ITER(x, flag, self.k_init, self.n_agents) 
 
     def objective(self, x): 
         # Returns the scalar value of the objective given x. 
@@ -162,11 +162,11 @@ def iterate(k_init, n_agents, gp_old):
     """
     nlp=cyipopt.Problem(n=N, m = M, problem_obj=HS07, lb=X_L, ub=X_U, cl=G_L, cu=G_U,) 
 
-    nlp.addOption("obj_scaling_factor", -1.00) # max function 
-    nlp.addOption('mu_strategy', 'adaptive')
-    nlp.addOption('tol', 1e-6)
-    nlp.addOption("print_level", 0)
-    nlp.addOption("hessian_approximation", "limited-memory")
+    nlp.add_option("obj_scaling_factor", -1.00) # max function 
+    nlp.add_option('mu_strategy', 'adaptive')
+    nlp.add_option('tol', 1e-6)
+    nlp.add_option("print_level", 0)
+    nlp.add_option("hessian_approximation", "limited-memory")
 
     optimal_soln, info = nlp.solve(X)
 

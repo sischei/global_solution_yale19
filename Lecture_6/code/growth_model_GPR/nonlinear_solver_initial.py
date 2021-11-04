@@ -150,7 +150,7 @@ def initial(k_init, n_agents):
     """ 
 
     # create problem object 
-    problem_object = HS071(X, n_agents, k_init, NELE_JAC, NELE_HESS)
+    HS07 = HS071(X, n_agents, k_init, NELE_JAC, NELE_HESS)
 
 
 
@@ -158,11 +158,11 @@ def initial(k_init, n_agents):
     #nlp=pyipopt.create(nvars, X_L, X_U, M, G_L, G_U, NELE_JAC, NELE_HESS, eval_f, eval_grad_f, eval_g, eval_jac_g)
     
     nlp=cyipopt.Problem(n=nvars, m = M, problem_obj=HS07, lb=X_L, ub=X_U, cl=G_L, cu=G_U,)
-    nlp.addOption("obj_scaling_factor", -1.00) #max function 
-    nlp.addOption('mu_strategy', 'adaptive')
-    nlp.addOption('tol', 1e-5)
-    nlp.addOption("print_level", 0)
-    nlp.addOption("hessian_approximation", "limited-memory")
+    nlp.add_option("obj_scaling_factor", -1.00) #max function 
+    nlp.add_option('mu_strategy', 'adaptive')
+    nlp.add_option('tol', 1e-5)
+    nlp.add_option("print_level", 0)
+    nlp.add_option("hessian_approximation", "limited-memory")
 
     
     #x, z_l, z_u, constraint_multipliers, obj, status=nlp.solve(X)
