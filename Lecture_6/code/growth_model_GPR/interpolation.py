@@ -7,12 +7,14 @@
 #     => at every training point, we solve an optimization problem
 #
 #     Simon Scheidegger, 01/19
+#     Cameron Gordon 11/21 print statements to Python3
 #======================================================================
 
 import numpy as np
 from parameters import *
 import nonlinear_solver_initial as solver
-import cPickle as pickle
+#import cPickle as pickle
+import pickle
 
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern
@@ -21,7 +23,7 @@ from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern
 
 def GPR_init(iteration):
     
-    print "hello from step ", iteration
+    print("hello from step ", iteration)
     
   
     #fix seed
@@ -55,11 +57,11 @@ def GPR_init(iteration):
      
     #save the model to a file
     output_file = filename + str(iteration) + ".pcl"
-    print output_file 
+    print(output_file)
     with open(output_file, 'wb') as fd:
         pickle.dump(gp, fd, protocol=pickle.HIGHEST_PROTOCOL)
-        print "data of step ", iteration ,"  written to disk"
-        print " -------------------------------------------"
+        print("data of step ", iteration ,"  written to disk")
+        print(" -------------------------------------------")
     fd.close()
     
 #======================================================================
