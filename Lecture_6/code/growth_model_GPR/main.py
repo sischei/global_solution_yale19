@@ -12,6 +12,8 @@
 #     - scikit-learn GPR (https://scikit-learn.org)
 #
 #     Simon Scheidegger, 01/19 
+#
+#     Cameron Gordon, 11/21 - conversion to Python3    
 #======================================================================
 
 import nonlinear_solver_initial as solver     #solves opt. problems for terminal VF
@@ -30,29 +32,29 @@ import numpy as np
 for i in range(numstart, numits):
 # terminal value function
     if (i==1):
-        print "start with Value Function Iteration"
+        print("start with Value Function Iteration")
         interpol.GPR_init(i)
     
     else:     
-        print "Now, we are in Value Function Iteration step", i
+        print("Now, we are in Value Function Iteration step", i)
         interpol_iter.GPR_iter(i)
     
     
 #======================================================================
-print "==============================================================="
-print " "
-print " Computation of a growth model of dimension ", n_agents ," finished after ", numits, " steps"
-print " "
-print "==============================================================="
+print("===============================================================")
+print(" ")
+print(" Computation of a growth model of dimension ", n_agents ," finished after ", numits, " steps")
+print(" ")
+print("===============================================================")
 #======================================================================
 
 # compute errors   
 avg_err=post.ls_error(n_agents, numstart, numits, No_samples_postprocess)
 
 #======================================================================
-print "==============================================================="
-print " "
+print("===============================================================")
+print(" ")
 #print " Errors are computed -- see error.txt"
-print " "
-print "==============================================================="
+print(" ")
+print("===============================================================")
 #======================================================================
