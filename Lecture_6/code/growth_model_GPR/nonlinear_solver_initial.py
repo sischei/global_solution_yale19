@@ -5,7 +5,7 @@
 #     at the beginning of the VFI.
 #
 #     Simon Scheidegger, 11/16 ; 07/17; 01/19 
-#     Cameron Gordon, updates to Python3 
+#     Cameron Gordon, updates to Python3 11/21
 #     Main difference is the shift from pyipopt to cyipopt 
 #     Involves a class to pass the optimisation problem to ipopt 
 #======================================================================
