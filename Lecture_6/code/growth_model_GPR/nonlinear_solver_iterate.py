@@ -12,7 +12,7 @@
 #======================================================================
 
 from parameters import *
-from ipopt_wrapper import EV_F_ITER, EV_GRAD_F_ITER, EV_G_ITER, EV_JAC_G_ITER
+from ipopt_wrapper_A import EV_F_ITER, EV_GRAD_F_ITER, EV_G_ITER, EV_JAC_G_ITER
 import numpy as np
 #import pyipopt 
 import cyipopt 

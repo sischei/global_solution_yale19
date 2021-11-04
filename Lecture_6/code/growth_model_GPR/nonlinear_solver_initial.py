@@ -11,7 +11,7 @@
 #======================================================================
 
 from parameters import *
-from ipopt_wrapper import EV_F, EV_GRAD_F, EV_G, EV_JAC_G
+from ipopt_wrapper_A import EV_F, EV_GRAD_F, EV_G, EV_JAC_G
 import numpy as np
 #import pyipopt 
 import cyipopt 
