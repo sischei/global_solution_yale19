@@ -44,6 +44,8 @@ def GPR_iter(iteration):
     # solve bellman equations at training points
     for iI in range(len(Xtraining)):
         y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old)[0] 
+        if iI == len(Xtraining-1) and iteration == numits-1: 
+            y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old,final=True)[0] 
     
     #print data for debugging purposes
     #for iI in range(len(Xtraining)):

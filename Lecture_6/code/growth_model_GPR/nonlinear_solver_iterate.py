@@ -19,7 +19,7 @@ import cyipopt
 from HS071_iter import * 
 
 
-def iterate(k_init, n_agents, gp_old):
+def iterate(k_init, n_agents, gp_old, final=False):
     
     # IPOPT PARAMETERS below "
     N=3*n_agents    # number of vars
@@ -123,7 +123,8 @@ def iterate(k_init, n_agents, gp_old):
     g = info['g'] # constraint multipliers 
     obj = info['obj_val'] #objective value 
 
-    nlp.close()
+    if final != True: 
+        nlp.close()
 
     # x: Solution of the primal variables
     # z_l, z_u: Solution of the bound multipliers
