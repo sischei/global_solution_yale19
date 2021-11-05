@@ -40,9 +40,9 @@ def GPR_init(iteration, save_data=True):
     
     # solve bellman equations at training points
     for iI in range(len(Xtraining)):
-        y[iI] = solver.initial(Xtraining[iI], n_agents)[0] 
+        y[iI], consumption, investment, labor = solver.initial(Xtraining[iI], n_agents)
 
-        iter_container.append([Xtraining[iI],y[iI]])
+        iter_container.append([Xtraining[iI],y[iI],iteration, consumption, investment, labor])
 
     #for iI in range(len(Xtraining)):        
         #print Xtraining[iI], y[iI]   

@@ -50,10 +50,11 @@ def GPR_iter(iteration,save_data=True):
     
     # solve bellman equations at training points
     for iI in range(len(Xtraining)):
-        y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old)[0] 
+        y[iI], consumption, investment, labor = solver.iterate(Xtraining[iI], n_agents,gp_old) 
+
         if iI == len(Xtraining-1) and iteration == numits-1: 
-            y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old,final=True)[0] # this pulls out the objective value (i.e. value) 
-        iter_container.append([Xtraining[iI],y[iI]])
+            y[iI], consumption, investment, labor = solver.iterate(Xtraining[iI], n_agents,gp_old,final=True) # this pulls out the objective value (i.e. value) 
+        iter_container.append([Xtraining[iI],y[iI],iteration, consumption, investment, labor])
     
     #print data for debugging purposes
     #for iI in range(len(Xtraining)):
