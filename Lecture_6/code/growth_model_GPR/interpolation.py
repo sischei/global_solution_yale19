@@ -7,21 +7,27 @@
 #     => at every training point, we solve an optimization problem
 #
 #     Simon Scheidegger, 01/19
+#     Cameron Gordon 11/21 print statements to Python3
 #======================================================================
 
 import numpy as np
 from parameters import *
 import nonlinear_solver_initial as solver
-import cPickle as pickle
+#import cPickle as pickle
+import pickle
 
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern
 
 #======================================================================
 
-def GPR_init(iteration):
+def GPR_init(iteration, save_data=True):
     
-    print "hello from step ", iteration
+    print("hello from step ", iteration)
+
+    # create container to save samples 
+
+    iter_container = [] 
     
   
     #fix seed
@@ -34,7 +40,9 @@ def GPR_init(iteration):
     
     # solve bellman equations at training points
     for iI in range(len(Xtraining)):
-        y[iI] = solver.initial(Xtraining[iI], n_agents)[0] 
+        y[iI], consumption, investment, labor = solver.initial(Xtraining[iI], n_agents)
+
+        iter_container.append([Xtraining[iI],y[iI],iteration, consumption, investment, labor])
 
     #for iI in range(len(Xtraining)):        
         #print Xtraining[iI], y[iI]   
@@ -55,12 +63,15 @@ def GPR_init(iteration):
      
     #save the model to a file
     output_file = filename + str(iteration) + ".pcl"
-    print output_file 
+    print(output_file)
     with open(output_file, 'wb') as fd:
         pickle.dump(gp, fd, protocol=pickle.HIGHEST_PROTOCOL)
-        print "data of step ", iteration ,"  written to disk"
-        print " -------------------------------------------"
+        print("data of step ", iteration ,"  written to disk")
+        print(" -------------------------------------------")
     fd.close()
     
+
+    if save_data: 
+        return iter_container 
 #======================================================================
 
