@@ -4,13 +4,11 @@
 #     solutions.
 #
 #     Simon Scheidegger, 01/19
-#     Cameron Gordon, 11/21 - updates to Python3 (print statements + pickle)
 #======================================================================
 
 import numpy as np
 from parameters import *
-#import cPickle as pickle
-import pickle
+import cPickle as pickle
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import (RBF, Matern, RationalQuadratic,
                                               ExpSineSquared, DotProduct,
@@ -35,14 +33,14 @@ def ls_error(n_agents, t1, t2, num_points):
         restart_data = filename + str(i) + ".pcl"
         with open(restart_data, 'rb') as fd_old:
             gp_old = pickle.load(fd_old)
-            print("data from iteration step ", i , "loaded from disk")
+            print "data from iteration step ", i , "loaded from disk"
         fd_old.close()      
       
         # Load the model from the previous iteration step
         restart_data = filename + str(i+1) + ".pcl"
         with open(restart_data, 'rb') as fd_new:
             gp_new = pickle.load(fd_new)
-            print("data from iteration step ", i+1 , "loaded from disk")
+            print "data from iteration step ", i+1 , "loaded from disk"
         fd_new.close()        
       
         y_pred_old, sigma_old = gp_old.predict(k_sample, return_std=True)
@@ -61,7 +59,7 @@ def ls_error(n_agents, t1, t2, num_points):
         to_print[0,2]= average
         
         np.savetxt(file, to_print, fmt='%2.16f')
-        print("===================================")
+        print "==================================="
 
         
     file.close()
