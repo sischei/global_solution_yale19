@@ -23,22 +23,32 @@ import interpolation as interpol              #interface to sparse grid library/
 import interpolation_iter as interpol_iter    #interface to sparse grid library/iteration
 import postprocessing as post                 #computes the L2 and Linfinity error of the model
 import numpy as np
-
+import matplotlib.pyplot as plt 
 
 #======================================================================
 # Start with Value Function Iteration
+
+
+# Set up a container to save the k/obj pairs as they are sampled & optimised 
+
+sample_container = {"k_init":[],
+                    "value": []} 
 
 
 for i in range(numstart, numits):
 # terminal value function
     if (i==1):
         print("start with Value Function Iteration")
-        interpol.GPR_init(i)
+        iter_container = interpol.GPR_init(i)
+
     
     else:     
         print("Now, we are in Value Function Iteration step", i)
-        interpol_iter.GPR_iter(i)
+        iter_container = interpol_iter.GPR_iter(i)
     
+    for j in range(len(iter_container)): 
+        sample_container['k_init'].append(iter_container[j][0]) 
+        sample_container['value'].append(iter_container[j][1]) 
     
 #======================================================================
 print("===============================================================")
@@ -58,3 +68,23 @@ print(" ")
 print(" ")
 print("===============================================================")
 #======================================================================
+
+sample_container['k_init']=np.array(sample_container['k_init'])
+sample_container['vallue']=np.array(sample_container['value'])
+import matplotlib
+
+from mpl_toolkits.mplot3d import Axes3D
+
+matplotlib.use('tkagg')
+
+
+print("k_init",sample_container['k_init'][:,0])
+print('value', sample_container['value'])
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')#(projection='3d')
+
+ax.scatter(sample_container['k_init'][:,0], sample_container['k_init'][:,1] , sample_container['value'])
+#plt.colorbar()
+#plt.show()
+plt.show()

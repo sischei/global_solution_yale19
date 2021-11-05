@@ -21,9 +21,13 @@ from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern
 
 #======================================================================
 
-def GPR_init(iteration):
+def GPR_init(iteration, save_data=True):
     
     print("hello from step ", iteration)
+
+    # create container to save samples 
+
+    iter_container = [] 
     
   
     #fix seed
@@ -37,6 +41,8 @@ def GPR_init(iteration):
     # solve bellman equations at training points
     for iI in range(len(Xtraining)):
         y[iI] = solver.initial(Xtraining[iI], n_agents)[0] 
+
+        iter_container.append([Xtraining[iI],y[iI]])
 
     #for iI in range(len(Xtraining)):        
         #print Xtraining[iI], y[iI]   
@@ -64,5 +70,8 @@ def GPR_init(iteration):
         print(" -------------------------------------------")
     fd.close()
     
+
+    if save_data: 
+        return iter_container 
 #======================================================================
 

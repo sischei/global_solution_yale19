@@ -25,8 +25,15 @@ from sklearn.gaussian_process.kernels import RBF, WhiteKernel, Matern
 
 #======================================================================
 
-def GPR_iter(iteration):
+def GPR_iter(iteration,save_data=True):
+
+    # iteration container to save the k / obj pairs 
+    # note we have multiple sectors so this may be interesting 
+
+    iter_container = []  
     
+
+
     
     # Load the model from the previous iteration step
     restart_data = filename + str(iteration-1) + ".pcl"
@@ -45,7 +52,8 @@ def GPR_iter(iteration):
     for iI in range(len(Xtraining)):
         y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old)[0] 
         if iI == len(Xtraining-1) and iteration == numits-1: 
-            y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old,final=True)[0] 
+            y[iI] = solver.iterate(Xtraining[iI], n_agents,gp_old,final=True)[0] # this pulls out the objective value (i.e. value) 
+        iter_container.append([Xtraining[iI],y[iI]])
     
     #print data for debugging purposes
     #for iI in range(len(Xtraining)):
@@ -53,6 +61,8 @@ def GPR_iter(iteration):
   
     # Instantiate a Gaussian Process model  
     kernel = RBF() 
+
+
 
     # Instantiate a Gaussian Process model
     #kernel = 1.0 * RBF(length_scale=1.0, length_scale_bounds=(1e-1, 10.0))
@@ -77,5 +87,7 @@ def GPR_iter(iteration):
         print(" -------------------------------------------")
     fd.close()    
     
+    if save_data==True: 
+        return iter_container 
 
 #======================================================================
