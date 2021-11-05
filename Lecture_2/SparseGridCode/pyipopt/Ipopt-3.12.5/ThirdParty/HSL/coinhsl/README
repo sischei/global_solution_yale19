@@ -1,0 +1,78 @@
+Legal Notice
+============
+ALL USAGE OF HSL IS SUBJECT TO LICENCE. PLEASE REFER TO THE FILE 'LICENCE'
+DISTRIBUTED WITH THIS SOFTWARE. THIS LICENCE APPLIES TO ALL FILES UNLESS
+OTHERWISE INDICATED. IF YOU OBTAINED A COPY OF THIS SOFTWARE WITHOUT THIS FILE,
+PLEASE CONTACT HSL@STFC.AC.UK TO OBTAIN ONE.
+
+In particular:
+1) You are obliged to cite HSL in any publication or report as:
+   "HSL, a collection of Fortran codes for large-scale scientific computation.
+    See http://www.hsl.rl.ac.uk/"
+2) You may not make available to others the software in any form, either as
+   source or as a precompiled object.
+
+Introduction
+============
+Thanks for downloading HSL software. You can find out more information about
+HSL by visiting our website: http://www.hsl.rl.ac.uk/
+
+This package is intended to be used exclusively with IPOPT. To obtain the full
+version of the packages please download them from the HSL web address above.
+
+Installation
+============
+
+You have three options for installation:
+BEFORE IPOPT: Follow the instructions below. Ensure that the Ipopt configure
+   script can find the resulting library.
+WITH IPOPT: To compile this code at the same time as Ipopt, you will need to
+   rename this directory to 'coinhsl' and place it in the ThirdParty/HSL
+   subdirectory of your Ipopt source directory before configuring Ipopt.
+AFTER IPOPT: For this to work, Ipopt's shared library loading functionality
+   must be enabled. Compile this code using the instructions below to generate
+   a shared library and place it in Ipopt's shared library search path.
+
+Note: Using this code is not compatible with older versions of Ipopt that were
+configured to build seperate HSL sources.
+
+Compilation follows the standard process:
+   ./configure
+   make
+
+To install the library, module and header files into /usr/local you may
+use the following command (this may require root permissions):
+   make install
+
+To use the library, ensure that the library libcoinhsl.so can be found
+by both the linker and the dynamic library loader. You can either add the
+path to the ldconfig configuration, or explicitly set the environment
+variable LD_LIBRARY_PATH.
+
+For further options, including installation in locations other than
+/usr/local and specifying the use of particular Fortran compilers and
+compile flags please run
+   ./configure --help
+
+The file INSTALL contains more detailed information.
+
+Other libraries
+===============
+To use libcoinhsl.so you MUST ensure that:
+* Both HSL and IPOPT are compiled with compatible C++ and Fortran compilers,
+   for example g++ and gfortran.
+* A BLAS library is available. This library is usually supplied by your
+   computer processor vendor (eg Intel MKL), and using a good one is critical
+   to performance.
+   If you are unable to locate a vendor BLAS then you should use either
+   the Goto or ATLAS BLAS (the latter is often available as part of
+   your linux distribution).
+   Using the reference BLAS from netlib can often be ten times slower.
+
+It is RECOMMENDED that:
+* The METIS matrix ordering routines are available. This can be achieved by
+   compiling them as part of IPOPT, see the IPOPT documentation for futher
+   details.
+* Both HSL and IPOPT are compiled using the compiler's OpenMP flags (normally
+   some variant of -openmp or -fopenmp). The easiest way to do this is to
+   specify at configure time ./configure CXXFLAGS=-openmp FCFLAGS=-openmp
