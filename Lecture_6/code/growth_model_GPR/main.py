@@ -110,6 +110,19 @@ def plot_scatterplot():
     #plt.show()
     plt.show()
 
+def get_gaussian_process(): 
+    with open("./restart/restart_file_step_"+str(numits-1)+".pcl", 'rb') as fd:
+        gp_old = pickle.load(fd)
+    
+    fd.close() 
+    return gp_old 
+
+def get_values(k_inits): 
+    Gaussian_Process = get_gaussian_process()
+    values = Gaussian_Process.predict(k_inits, return_std=False) 
+    return values 
+
+
 
 def convergence_check(): 
     # tests for convergence by checking the predicted values at the sampled points of the final 
@@ -173,12 +186,17 @@ k_test, value_test, consumption, investment, labor = extract_variables()
 #print(consumption)
 #print(investment)
 #print(labor)
+def help(): 
+    print(" ========== Finished ==========") 
+    print("Time elapsed: ",round(end-start,2)) 
 
-print(" ========== Finished ==========") 
-print("Time elapsed: ",round(end-start,2)) 
+    print("Call variables k_test, value_test, consumption, investment, labor")
+    print("Use plot_scatterplot() to visualise") 
+    print("Use get_gaussian_process() to get the Gaussian Process")
+    print("Predict values for given k_values with get_values(k_values), e.g. values = get_values(k_test)")
+    print("For options / prompts type help()")
 
-print("Call variables k_test, value_test, consumption, investment, labor")
-print("Use plot_scatterplot() to visualise")
+help()
 
 #plot_scatterplot() 
 
